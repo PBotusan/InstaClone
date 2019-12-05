@@ -25,9 +25,8 @@
             <input type="file" class="form-control-file" id="image" name="image">
             
             @if($errors->has('image'))
-                <span class="invalid-feedback" role="alert">
-                      <strong>{{ $errors->first('image') }}</strong>
-                </span>
+          
+                <strong>{{ $errors->first('image') }}</strong>
             @endif
         </div>
         
