@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div> <h1>Edit Profile</h1></div>.
-    <form action="/profile/}{{ $user->id }}" enctype="multipart/form-data" method="post">
+    <form action="/profile/{{ $user->id }}" enctype="multipart/form-data" method="post">
     @csrf
     @method('PATCH')
  

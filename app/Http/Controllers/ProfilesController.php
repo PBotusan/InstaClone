@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
-
+use Auth;
 use \App\User;
 use Illuminate\Http\Request;
 
@@ -19,15 +19,15 @@ class ProfilesController extends Controller
     
     public function update(User $user)
     {
-        $array = request()->validate
-        ([
+        $array = request()->validate([
             'title' => 'required',
             'description' => 'required',
             'url' => 'url',
             'image' => '',
         ]);
         
-        auth()->user()->profile->update($array);
+        Auth::user()->profile->update($array);
+        
         return redirect("/profile/{$user->id}");
     }
 }
