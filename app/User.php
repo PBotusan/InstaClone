@@ -37,6 +37,19 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
     
+    //bootmethod start wanneer je nieuwe user aanmaakt
+    protected static function boot()
+    {
+        parent::boot(); 
+
+        static::created(function ($user){
+            //maak user aan zodat het geen exception geeft.
+            $user->profile()->create([
+                'title' => $user->userName,
+            ]);
+        });
+    }
+
     public function posts()
     {
         return $this->hasMany(Post::class)->orderBy('created_at', 'DESC');
