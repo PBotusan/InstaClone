@@ -14,7 +14,7 @@ class PostsController extends Controller
     
     public function create()
     {
-        return view('posts.create');
+        return view('posts/create');
     }
     
     // data array met caption en image wat je op je profiel kunt opslaan.

@@ -57,7 +57,6 @@
             <input type="file" class="form-control-file" id="image" name="image">
             
             @if($errors->has('image'))
-          
                 <strong>{{ $errors->first('image') }}</strong>
             @endif
         </div>

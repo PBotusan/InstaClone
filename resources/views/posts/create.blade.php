@@ -5,6 +5,7 @@
     <div> <h1> Add new Post</h1></div>.
     <form action="/p" enctype="multipart/form-data" method="post">
     @csrf
+    
         <div class="row">
             <div class="col-8"> 
                 <div class="form-group row">
@@ -25,6 +26,7 @@
             <input type="file" class="form-control-file" id="image" name="image">
             
             @if($errors->has('image'))
+          
                 <strong>{{ $errors->first('image') }}</strong>
             @endif
         </div>
