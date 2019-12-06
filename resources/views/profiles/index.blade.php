@@ -4,12 +4,12 @@
 <div class="container">
     <div class='row'>
         <div class="col-3 p-5" >
-            <img src="/images/starimg.png" class="rounded-circle" style="height: 200px;" style='background-color: transparent' >
+            <img src="/storage/{{ $user->profile->image }}" class="rounded-circle w-100" >
         </div>
         <div class="col-9 pt-5">
             <div class="d-flex justify-content-between align-items-baseline"> 
                 <h1>{{ $user->userName }}</h1>
-                
+
                 @can('update', $user->profile)
                     <a href="{{ route('post.create') }}"> Add new Post </a>
                 @endcan
