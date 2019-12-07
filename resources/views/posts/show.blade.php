@@ -9,15 +9,23 @@
         <div>
             <div class="d-flex align-items-center">
                 <div class="pr-3">
-                    <img src="/storage/{{ $post->user->profile->image}}" class="rounded-circle w-100" style="max-width: 50px;">
+                    <img src={{ $post->user->profile->profileImage() }} class="rounded-circle w-100" style="max-width: 50px;">
                 </div>
                 <div>
-                    <div class="font-weight-bold"><a href="/profile/{{ $post->user->id }}">{{ $post->user->userName}} </a></div>
+                    <div class="font-weight-bold" >
+                        <a href="/profile/{{ $post->user->id }}">
+                            {{ $post->user->userName}} 
+                        </a>
+                        <a href="#" class="pl-3">Follow</a>
+                    </div>
                 </div>
             </div>
 
             <hr>
-            <p><a href="/profile/{{ $post->user->id }}">{{ $post->caption}}</a>  </p>
+                <p>
+                    <a href="/profile/{{ $post->user->id }}">
+                    {{ $post->caption}}</a>  
+                </p>
         </div>
     </div>
 </div>
