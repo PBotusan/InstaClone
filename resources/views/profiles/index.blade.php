@@ -10,7 +10,7 @@
             <div class="d-flex justify-content-between align-items-baseline"> 
                 <h1>{{ $user->userName }}</h1>
 
-                <follow-button></follow-button>
+                <follow-button userid="{{ $user->id }}"></follow-button>
 
                 @can('update', $user->profile)
                     <a href="{{ route('post.create') }}"> Add new Post </a>

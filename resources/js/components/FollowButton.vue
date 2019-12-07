@@ -7,6 +7,9 @@
 <script>
 import { METHODS } from 'http';
     export default {
+
+        props: ['userid'],
+
         mounted() {
             console.log('Component mounted.')
         },
@@ -16,9 +19,9 @@ import { METHODS } from 'http';
         {
             followUser()
             {
-                axios.post('/follow/1')
+                axios.post('/follow/' + this.userid)
                 .then(response => {
-                    alert(response.data);
+                    console.log(response.data);
                 });
             }
         }
