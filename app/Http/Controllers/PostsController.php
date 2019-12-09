@@ -16,6 +16,12 @@ class PostsController extends Controller
     {
         return view('posts/create');
     }
+
+    public function index()
+    {
+        $users = auth()->user()->following()->pluck('profiles.user_id');
+        dd($users);
+    }
     
     // data array met caption en image wat je op je profiel kunt opslaan.
     public function store()
